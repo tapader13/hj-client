@@ -34,25 +34,25 @@ export const jobSlice = apiSlice.injectEndpoints({
     }),
     location: builder.query({
       query: () => ({
-        url: `${base_url}/location/getloc `,
+        url: `${base_url}location/getloc `,
         method: 'GET',
       }),
     }),
     workexp: builder.query({
       query: () => ({
-        url: `${base_url}/experience/getexp `,
+        url: `${base_url}experience/getexp `,
         method: 'GET',
       }),
     }),
     empltype: builder.query({
       query: () => ({
-        url: `${base_url}/categorie/getcat `,
+        url: `${base_url}categorie/getcat `,
         method: 'GET',
       }),
     }),
     salary: builder.query({
       query: () => ({
-        url: `${base_url}/salary/getsalary `,
+        url: `${base_url}salary/getsalary `,
         method: 'GET',
       }),
     }),
