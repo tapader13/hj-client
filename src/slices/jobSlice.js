@@ -1,17 +1,17 @@
 import { apiSlice } from './apiSlice';
-const base_url = '/';
+const base_url = import.meta.env.VITE_API_BASE_URL;
 export const jobSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     jobuser: builder.query({
       query: () => ({
-        url: `${base_url}api/job/getuserjob `,
+        url: `${base_url}job/getuserjob `,
         method: 'GET',
       }),
       providesTags: ['job'],
     }),
     createjob: builder.mutation({
       query: (data) => ({
-        url: `${base_url}api/job/createjob `,
+        url: `${base_url}job/createjob `,
         method: 'POST',
         body: data,
       }),
@@ -22,7 +22,7 @@ export const jobSlice = apiSlice.injectEndpoints({
         const filterKey = Object.keys(data.filter)[0];
         const filterValue = data.filter[filterKey];
         return {
-          url: `${base_url}api/job/?_page=${data._page}&_limit=${data._limit}&${filterKey}=${filterValue}`,
+          url: `${base_url}job/?_page=${data._page}&_limit=${data._limit}&${filterKey}=${filterValue}`,
           method: 'GET',
         };
       },
@@ -34,31 +34,31 @@ export const jobSlice = apiSlice.injectEndpoints({
     }),
     location: builder.query({
       query: () => ({
-        url: `${base_url}api/location/getloc `,
+        url: `${base_url}/location/getloc `,
         method: 'GET',
       }),
     }),
     workexp: builder.query({
       query: () => ({
-        url: `${base_url}api/experience/getexp `,
+        url: `${base_url}/experience/getexp `,
         method: 'GET',
       }),
     }),
     empltype: builder.query({
       query: () => ({
-        url: `${base_url}api/categorie/getcat `,
+        url: `${base_url}/categorie/getcat `,
         method: 'GET',
       }),
     }),
     salary: builder.query({
       query: () => ({
-        url: `${base_url}api/salary/getsalary `,
+        url: `${base_url}/salary/getsalary `,
         method: 'GET',
       }),
     }),
     jobdetails: builder.query({
       query: (id) => ({
-        url: `${base_url}api/job/getjobdlts/${id} `,
+        url: `${base_url}/job/getjobdlts/${id} `,
         method: 'GET',
       }),
     }),

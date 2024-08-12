@@ -1,5 +1,5 @@
 import { apiSlice } from './apiSlice';
-const base_url = '/api/';
+const base_url = import.meta.env.VITE_API_BASE_URL;
 export const contactSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createContact: builder.mutation({
