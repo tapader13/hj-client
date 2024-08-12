@@ -57,8 +57,8 @@ export const jobSlice = apiSlice.injectEndpoints({
       }),
     }),
     jobdetails: builder.query({
-      query: (id) => ({
-        url: `${base_url}/job/getjobdlts/${id} `,
+      query: (_id) => ({
+        url: `${base_url}/job/getjobdlts/${_id} `,
         method: 'GET',
       }),
     }),
